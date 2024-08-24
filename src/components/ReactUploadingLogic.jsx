@@ -13,12 +13,14 @@ const ReactUploadingLogic = () => {
             setMessage('Select a file to upload.');
             return;
         }
-
+    
         const formData = new FormData();
         formData.append('file', file);
-
+        console.log('Uploading file:', file); // Debug log
+    
         try {
             const res = await uploadFile(formData);
+            console.log('Upload response:', res.data); // Debug log
             setMessage(res.data.message);
             setFileUploaded(true);
             fetchBooks();
@@ -27,6 +29,7 @@ const ReactUploadingLogic = () => {
             setMessage('Unable to upload file.');
         }
     };
+    
 
     const fetchBooks = async () => {
         try {
