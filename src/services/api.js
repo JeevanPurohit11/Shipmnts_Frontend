@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://shipmnts-backend-three.vercel.app/', // Our base of project
+    baseURL: process.env.REACT_APP_API_URL, // Our base of project
     withCredentials: true,
 });
 
