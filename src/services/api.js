@@ -1,16 +1,16 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:5000', // Our base of project
+    baseURL: 'https://shipmnts-backend-three.vercel.app/', // Our base of project
     withCredentials: true,
 });
 
 //added file
-export const uploadFile = (formData) => api.post('http://localhost:5500/api/upload', formData, {
+export const uploadFile = (formData) => api.post('https://shipmnts-backend-three.vercel.app/upload', formData, {
     headers: {
         'Content-Type': 'multipart/form-data',
     },
 });
 
 // Used Pagination for fetching data
-export const getBooks = (page, limit) => api.get(`http://localhost:5500/api/books?page=${page}&limit=${limit}`);
+export const getBooks = (page, limit) => api.get(`https://shipmnts-backend-three.vercel.app/books?page=${page}&limit=${limit}`);
